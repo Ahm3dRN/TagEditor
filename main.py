@@ -11,14 +11,13 @@ from PyQt5 import QtWidgets
 from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtCore import Qt, QEvent, QPoint
 from ImageViewer import QImageViewer
-from MainWindow_Ui import Ui_MainWindow
 
 repo = "https://github.com/Ahm3dRN/TagEditor"
 
-class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
-        self.setupUi(self)
+        self.ui = uic.loadUi("newui.ui", self)
         self.setWindowFlag(Qt.FramelessWindowHint)
         self.installEventFilter(self)
         self.frame_8.installEventFilter(self)
