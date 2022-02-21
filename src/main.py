@@ -186,11 +186,17 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.current_tag:
             self.current_tag.lyrics.set(lyrics)
             self.current_tag.save(version=eyed3.id3.ID3_DEFAULT_VERSION, encoding='utf-8')
-        
+            self.show_info("Saved")
+        else:
+            self.show_unloaded_warning()
+
     def save_metadata_form(self):
         # tag = id3.Tag()
         # tag.parse(self.file_path)
         # a = load(self.file_path)
+        if not self.current_tag:
+            self.show_unloaded_warning()
+            return
         tag = self.current_tag
         a = self.current_a
         title = self.title_input.text()
@@ -209,6 +215,7 @@ class MainWindow(QtWidgets.QMainWindow):
         tag.year = int(year)
         tag.genre = genre
         tag.save(version=eyed3.id3.ID3_DEFAULT_VERSION, encoding='utf-8')
+        self.show_info("Saved")
 
     def add_entry(self, row: int, data: list):
         """
