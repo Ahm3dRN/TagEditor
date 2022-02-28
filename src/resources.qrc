@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="panel">
+    <file>assets/download.png</file>
+    <file>assets/edit.png</file>
+    <file>assets/replace.png</file>
+    <file>assets/view.png</file>
+    <file>assets/delete.png</file>
+    <file>assets/alpha-sort-down.png</file>
+    <file>assets/alpha-sort-up.png</file>
+    <file>assets/default.jpg</file>
+    <file>assets/maxmize.png</file>
+    <file>assets/menu.png</file>
+    <file>assets/minimize.png</file>
+    <file>assets/open-folder.png</file>
+    <file>assets/quit.png</file>
+  </qresource>
+</RCC>

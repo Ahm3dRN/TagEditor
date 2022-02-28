@@ -852,6 +852,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
              </property>
              <item>
               <widget class="QTabWidget" name="tabWidget">
+               <property name="maximumSize">
+                <size>
+                 <width>600</width>
+                 <height>420</height>
+                </size>
+               </property>
                <property name="currentIndex">
                 <number>0</number>
                </property>
@@ -1033,6 +1039,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                     </item>
                     <item row="8" column="1">
                      <widget class="QLineEdit" name="duration_input">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
                       </property>
@@ -1058,6 +1067,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                     </item>
                     <item row="9" column="1">
                      <widget class="QLineEdit" name="bitrate_input">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
                       <property name="readOnly">
                        <bool>true</bool>
                       </property>
@@ -1080,6 +1092,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                     </item>
                     <item row="10" column="1">
                      <widget class="QLineEdit" name="access_date_input">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
                       </property>
@@ -1105,6 +1120,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                     </item>
                     <item row="11" column="1">
                      <widget class="QLineEdit" name="modified_date_input">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
                       </property>
@@ -1173,7 +1191,17 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
                    <item>
+                    <widget class="QLabel" name="label_22">
+                     <property name="text">
+                      <string>Comments</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <layout class="QHBoxLayout" name="horizontalLayout_8"/>
+                   </item>
+                   <item>
+                    <widget class="QTextEdit" name="comments_input"/>
                    </item>
                    <item>
                     <widget class="QLabel" name="label_5">
@@ -1198,7 +1226,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                </widget>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignHCenter">
               <widget class="QFrame" name="frame_13">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -1207,7 +1235,10 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_11">
-                <item>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
                  <widget class="QLabel" name="audio_cover">
                   <property name="minimumSize">
                    <size>
@@ -1236,52 +1267,73 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                  </widget>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_7">
-                  <item>
-                   <widget class="QPushButton" name="cover_change">
-                    <property name="text">
-                     <string>Change</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resources.qrc">
-                      <normaloff>:/panel/assets/edit.png</normaloff>:/panel/assets/edit.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="cover_remove">
-                    <property name="text">
-                     <string>Remove</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resources.qrc">
-                      <normaloff>:/panel/assets/delete.png</normaloff>:/panel/assets/delete.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="cover_download">
-                    <property name="text">
-                     <string>Download</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resources.qrc">
-                      <normaloff>:/panel/assets/download.png</normaloff>:/panel/assets/download.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="cover_view">
-                    <property name="text">
-                     <string>View</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="resources.qrc">
-                      <normaloff>:/panel/assets/view.png</normaloff>:/panel/assets/view.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <widget class="QFrame" name="frame_17">
+                  <property name="maximumSize">
+                   <size>
+                    <width>520</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_12">
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <item>
+                      <widget class="QPushButton" name="cover_change">
+                       <property name="text">
+                        <string>Change</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resources.qrc">
+                         <normaloff>:/panel/assets/edit.png</normaloff>:/panel/assets/edit.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="cover_remove">
+                       <property name="text">
+                        <string>Remove</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resources.qrc">
+                         <normaloff>:/panel/assets/delete.png</normaloff>:/panel/assets/delete.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="cover_download">
+                       <property name="text">
+                        <string>Download</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resources.qrc">
+                         <normaloff>:/panel/assets/download.png</normaloff>:/panel/assets/download.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="cover_view">
+                       <property name="text">
+                        <string>View</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resources.qrc">
+                         <normaloff>:/panel/assets/view.png</normaloff>:/panel/assets/view.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -1319,18 +1371,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="2">
-              <widget class="QPushButton" name="sort_ds">
-               <property name="text">
-                <string>Sort Z-a</string>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/panel/assets/alpha-sort-up.png</normaloff>:/panel/assets/alpha-sort-up.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
+             <item row="1" column="1">
               <widget class="QPushButton" name="sort_as">
                <property name="text">
                 <string>Sort A-z</string>
@@ -1341,7 +1382,25 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
+             <item row="1" column="6">
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="4">
+              <widget class="QPushButton" name="bulk_edit">
+               <property name="text">
+                <string>Edit Selected</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resources.qrc">
+                 <normaloff>:/panel/assets/edit.png</normaloff>:/panel/assets/edit.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
               <widget class="QPushButton" name="open_new_file">
                <property name="minimumSize">
                 <size>
@@ -1363,14 +1422,32 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                </property>
               </widget>
              </item>
-             <item row="0" column="5">
-              <widget class="QLabel" name="label_17">
+             <item row="1" column="7">
+              <widget class="QLabel" name="label_18">
                <property name="text">
                 <string/>
                </property>
               </widget>
              </item>
-             <item row="0" column="3">
+             <item row="1" column="2">
+              <widget class="QPushButton" name="sort_ds">
+               <property name="text">
+                <string>Sort Z-a</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resources.qrc">
+                 <normaloff>:/panel/assets/alpha-sort-up.png</normaloff>:/panel/assets/alpha-sort-up.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QLabel" name="label_16">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
               <widget class="QPushButton" name="remove">
                <property name="text">
                 <string>remove</string>
@@ -1381,17 +1458,10 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
                </property>
               </widget>
              </item>
-             <item row="0" column="4">
-              <widget class="QLabel" name="label_16">
+             <item row="2" column="0">
+              <widget class="QLabel" name="selected_count">
                <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="6">
-              <widget class="QLabel" name="label_18">
-               <property name="text">
-                <string/>
+                <string>Selected 0/0</string>
                </property>
               </widget>
              </item>
@@ -1400,6 +1470,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           </item>
           <item>
            <widget class="QTableWidget" name="playlist_table">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustIgnored</enum>
+            </property>
+            <property name="dragEnabled">
+             <bool>false</bool>
+            </property>
             <property name="rowCount">
              <number>0</number>
             </property>
